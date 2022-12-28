@@ -1,6 +1,6 @@
 const canvas = document.getElementById('visualization');
 const ctx = canvas.getContext('2d');
-
+const body = document.querySelector('body');
 let audioCtx;
 let analyser;
 
