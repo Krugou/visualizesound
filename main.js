@@ -1,10 +1,12 @@
 const canvas = document.getElementById('visualization');
 const ctx = canvas.getContext('2d');
 const body = document.querySelector('body');
+const text = document.getElementById('text');
 let audioCtx;
 let analyser;
 
 function startVisualization() {
+    text.remove();
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     audioCtx.resume().then(() => {
         navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
@@ -42,4 +44,4 @@ function startVisualization() {
     });
 }
 
-document.addEventListener('click', startVisualization);
+canvas.addEventListener('click', startVisualization);
